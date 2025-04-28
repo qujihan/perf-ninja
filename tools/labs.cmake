@@ -1,3 +1,15 @@
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# google benchmark
+set(BENCHMARK_ENABLE_TESTING NO)
+include(FetchContent)
+FetchContent_Declare(
+    benchmark
+    GIT_REPOSITORY https://github.com/google/benchmark.git
+    GIT_TAG origin/main
+)
+FetchContent_MakeAvailable(benchmark)
+
 # https://cmake.org/documentation/
 
 # Check usage of 'build' subdirectory
@@ -59,7 +71,7 @@ endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} ${CMAKE_CXX_FLAGS}")
 
 # https://github.com/google/benchmark
-find_package(benchmark PATHS "${CMAKE_CURRENT_LIST_DIR}/benchmark/build" REQUIRED)
+# find_package(benchmark PATHS "${CMAKE_CURRENT_LIST_DIR}/benchmark/build" REQUIRED)
 set(BENCHMARK_LIBRARY "benchmark::benchmark")
 
 # Find source files
