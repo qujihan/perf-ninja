@@ -1,4 +1,5 @@
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_BUILD_TYPE Release)
 
 # google benchmark
 set(BENCHMARK_ENABLE_TESTING NO)
